@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import filter from 'lodash/filter'
+
 export default {
   data: () => {
     return {
@@ -54,8 +56,15 @@ export default {
   },
   methods: {
     update() {
-      this.features =
-        filter(docs, e => (e.name + ' ' + e.description).match(this.search))
+      if (this.search !== '') {
+        this.features =
+          filter(this.features, e => (e.name + ' ' + e.description).match(this.search))
+      } else {
+        this.$services.waitForService('utils').then(async utilsService => {
+          this.features = await utilsService.features()
+          console.log($j(this.features))
+        }).catch(err => console.log(err))
+      }
     },
     handleSelected(feature) {
       this.$services.waitForService('utils').then(async utilsService => {
@@ -78,10 +87,7 @@ export default {
       }
     })
 
-    this.$services.waitForService('utils').then(async utilsService => {
-      this.features = await utilsService.features()
-      console.log($j(this.features))
-    }).catch(err => console.log(err))
+    this.update()
   },
   beforeDestroy() {
 
