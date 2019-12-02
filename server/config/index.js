@@ -121,6 +121,14 @@ module.exports = {
   },
   /* features specifics or defaults */
   features: {
+    encrypt: {
+      schemas: {},
+      config: {}
+    },
+    random: {
+      schemas: {},
+      config: {}
+    },
     mailer: {
       schemas: {
         config: {
@@ -315,22 +323,37 @@ module.exports = {
         'Provides utilities services':  [
           'Fournit des services utilitaires'
         ],
-        'Insert here your own UI components': [
-          'Insérer ici vos propres composants'
+        'Utilities': [
+          'Utilitaires'
         ],
-        'Utils Service view': [
-          'Vue du service Utils'
-        ],
-        'Send email': [
-          'Envoi de courriel'
+        'Send emails': [
+          'Envoi de courriels'
         ],
         'Utility': [
           'Utilitaire'
+        ],
+        'Manage RSA Public-Private Keypairs, encrypt/decrypt data': [
+          'Gestion des clés publiques/privées RSA, chiffrage/déchiffrage de données'
+        ],
+        'Random numbers generator based on npm:random lib': [
+          'Générateur de nombres aléatoires basé sur la librairie npm:random'
+        ],
+        'Machine learning basic algorithms': [
+          'Algorithmes d\'apprentissage'
+        ],
+        'YAML parse and stringify': [
+          'Gestion du format YAML'
+        ],
+        'Sentiment analysis': [
+          'Analyse d\'humeur'
+        ],
+        'XML document processing': [
+          'Traitement de documents XML'
         ]
       },
       /* eventually any other data */
-      title: 'My amazing component',
-      info: 'Provides uber crazy services'
+      title: 'Utils',
+      info: 'Provides utilities services'
     },
     /* domain related public options: could be any JSON object*/
     myPublicOption: {

@@ -12,7 +12,7 @@ global.iios_utils = function(Vue) {
     Vue.prototype.$services.emit('app:menu:add', [
       {
         path: '/service-utils',
-        title: 'Utils Service view',
+        title: 'Utilities',
         svgIcon: '$$service(utils)/assets/utils.svg',
         section: 'Services',
         anonymousAccess: true,

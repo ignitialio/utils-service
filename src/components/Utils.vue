@@ -18,13 +18,17 @@
 
           <v-list-item-content>
             <v-list-item-title v-text="feature.name"></v-list-item-title>
-            <v-list-item-subtitle v-text="feature.description"></v-list-item-subtitle>
+            <v-list-item-subtitle v-text="$t(feature.description)"></v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </div>
 
     <div class="utils-right" >
+      <div v-if="selected" class="utils-header">
+        <h3>{{ selected.name }}</h3>
+        <div>{{ $t(selected.description) }}</div>
+      </div>
       <ig-form v-if="!!config && !!schema"
         v-model="config" :schema="schema"></ig-form>
     </div>
@@ -110,7 +114,7 @@ export default {
 .utils-left {
   position: relative;
   min-width: 250px;
-  width: 360px;
+  width: 460px;
   max-width: calc(33% - 16px);
   border-right: 1px solid gainsboro;
   overflow-y: auto;
@@ -119,7 +123,15 @@ export default {
 .utils-right {
   flex: 1;
   height: calc(100% - 0px);
+  padding: 0 8px 0 8px;
+}
+
+.utils-header {
+  border-radius: 2px;
+  background-color: rgba(30, 144, 255, 0.05);
   padding: 8px;
+  text-align: right;
+  margin-bottom: 8px;
 }
 
 .utils-item.selected {

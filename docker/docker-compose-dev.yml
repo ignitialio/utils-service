@@ -58,6 +58,7 @@ services:
     volumes:
       - ${PWD}/dist:/opt/utils/dist
       - ${PWD}/server:/opt/utils/server
+      - ${PWD}/node_modules:/opt/utils/node_modules
     ports:
       - ${IIOS_DOCKER_EXPORTED_PORTS}
     environment:

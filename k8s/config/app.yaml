@@ -68,7 +68,7 @@ publicOptions:
         - 'Fournit des services super hyper dingues'
       'Insert here your own UI components':
         - 'Insérer ici vos propres composants'
-      'Utils Service view':
+      'Utilities':
         - 'Vue du service Utils'
     # eventually any other data
     title: 'My amazing component'

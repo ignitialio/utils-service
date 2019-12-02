@@ -20,9 +20,9 @@ class Utils extends Service {
         let Klass = require(path.join(featuresPath, feature))
         this._features[featureName] =
           new Klass(this._options.features[featureName])
-
       }
     } catch (err) {
+      console.log(err)
       this._dying(err, 'failed to initialize features')
     }
   }
@@ -33,8 +33,8 @@ class Utils extends Service {
     /* @_GET_ */
     return new Promise((resolve, reject) => {
       let features = {}
-      for (let feature in this._options.features) {
-        features[feature] = this._options.features[feature]._description || {
+      for (let feature in this._features) {
+        features[feature] = this._features[feature]._description || {
           name: feature,
           icon: 'assets/icons/feature-icon.png',
           description: 'Utility'
