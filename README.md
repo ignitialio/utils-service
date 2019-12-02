@@ -9,6 +9,8 @@ Utilities service providing basic features mainly provided by external libraries
 
 WIP !
 
+![Screenshot](doc/assets/utils-screenshot.png)
+
 ## Work with the repository
 
 The following _npm run_ targets are available:  
