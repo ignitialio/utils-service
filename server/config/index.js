@@ -355,9 +355,25 @@ module.exports = {
       title: 'Utils',
       info: 'Provides utilities services'
     },
-    /* domain related public options: could be any JSON object*/
-    myPublicOption: {
-      someOptions: {}
-    }
+    /* can be an worflow (Chaman) block */
+    workflow: {
+      types: [ 'Source', 'Processing' ],
+      hasWidget: false,
+      isMultinstance: false,
+      inputs: [
+        {
+          name: 'dataIn',
+          type: 'rpc',
+          method: 'call'
+        }
+      ],
+      outputs: [
+        {
+          name: 'dataOut',
+          type: 'rpc',
+          method: 'call'
+        }
+      ]
+    },
   }
 }
