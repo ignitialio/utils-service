@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@ignitial/iio-services": "^2.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "ml-modules": "^0.1.0",
     "nodemailer": "^6.4.5",
     "quick-encrypt": "^1.0.8",
